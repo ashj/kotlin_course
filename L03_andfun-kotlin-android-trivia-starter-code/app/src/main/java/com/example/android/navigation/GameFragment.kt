@@ -96,6 +96,7 @@ class GameFragment : Fragment() {
                         currentQuestion = questions[questionIndex]
                         setQuestion()
                         binding.invalidateAll()
+                        binding.questionRadioGroup.clearCheck()
                     } else {
                         // We've won!  Navigate to the gameWonFragment.
                         view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
