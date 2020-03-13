@@ -96,13 +96,14 @@ class GameFragment : Fragment() {
                         currentQuestion = questions[questionIndex]
                         setQuestion()
                         binding.invalidateAll()
-                        binding.questionRadioGroup.clearCheck()
+                        //binding.questionRadioGroup.clearCheck()
                     } else {
                         // We've won!  Navigate to the gameWonFragment.
                         view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
                     }
                 } else {
                     // Game over! A wrong answer sends us to the gameOverFragment.
+                    //binding.questionRadioGroup.clearCheck()
                     view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment2)
                 }
             }
