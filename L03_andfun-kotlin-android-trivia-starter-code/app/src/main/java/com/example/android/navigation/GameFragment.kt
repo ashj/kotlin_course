@@ -99,12 +99,12 @@ class GameFragment : Fragment() {
                         //binding.questionRadioGroup.clearCheck()
                     } else {
                         // We've won!  Navigate to the gameWonFragment.
-                        view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
+                        view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
                     }
                 } else {
                     // Game over! A wrong answer sends us to the gameOverFragment.
                     //binding.questionRadioGroup.clearCheck()
-                    view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment2)
+                    view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment2())
                 }
             }
         }
