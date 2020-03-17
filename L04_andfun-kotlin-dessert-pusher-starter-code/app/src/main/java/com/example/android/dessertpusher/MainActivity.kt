@@ -203,4 +203,9 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         outState.putInt(KEY_DESSERT_SOLD, dessertsSold)
         outState.putInt(KEY_DESSERT_TIMER, dessertTimer.secondsCount)
     }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Timber.i("onRestoreInstanceState called.")
+    }
 }
