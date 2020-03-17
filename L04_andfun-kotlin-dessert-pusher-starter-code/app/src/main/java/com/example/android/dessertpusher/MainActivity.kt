@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     private var currentDessert = allDesserts[0]
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Timber.i("onCreate called")
+        Timber.i("onCreate called.")
         super.onCreate(savedInstanceState)
 
         // Use Data Binding to get reference to the views
@@ -148,4 +148,30 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    override fun onPause() {
+        super.onPause()
+        Timber.i("onPause called.")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Timber.i("onResume called.")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Timber.i("onStart called.")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Timber.i("onStop called.")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Timber.i("onDestroy called.")
+    }
+
 }
