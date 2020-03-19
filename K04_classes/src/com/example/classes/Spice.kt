@@ -1,6 +1,6 @@
 package com.example.classes
 
-class Spice (val name: String, val spiciness : String = "mild") {
+abstract class Spice (val name: String, val spiciness : String = "mild", color: SpiceColor): SpiceColor by color {
     val heat : Int
         get() {
             return when (spiciness) {
@@ -12,27 +12,37 @@ class Spice (val name: String, val spiciness : String = "mild") {
                 else -> 0
         }
     }
+
+    abstract fun prepareSpice()
 }
-fun makeSalt() = Spice ("salt")
+
+class Curry(spiciness: String = "mild", color: SpiceColor = YellowSpiceColor): Spice(name = "Curry", spiciness = spiciness, color = color), Grinder {
+
+    override fun prepareSpice() {
+        println ("Preparing the $color spice.")
+        grind()
+    }
+
+    override fun grind() {
+        println ("    Grinding it.")
+    }
+}
+
+interface Grinder {
+    fun grind()
+}
+
+interface SpiceColor {
+    val color: String
+}
+object YellowSpiceColor: SpiceColor {
+    override val color: String = "yellow"
+
+}
+
+
 
 fun main() {
-    val spices1 = mutableListOf<Spice>(
-        Spice("curry", "mild"),
-        Spice("pepper", "medium"),
-        Spice("cayenne", "spicy"),
-        Spice("ginger", "mild"),
-        Spice("red curry", "medium"),
-        Spice("green curry", "mild"),
-        Spice("hot pepper", "extremely spicy")
-    )
-
-    val spice = Spice("cayenne", spiciness = "spicy")
-
-    spices1.add(spice)
-    spices1.add(makeSalt())
-    val spicelist = spices1.filter {it.heat < 5}
-
-    for (item in spicelist) {
-        println(item.name)
-    }
+    var curry = Curry()
+    curry.prepareSpice()
 }
