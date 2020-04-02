@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/K04_classes.iml" filepath="$PROJECT_DIR$/K04_classes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/K03_functions.iml" filepath="$PROJECT_DIR$/K03_functions.iml" />
     </modules>
   </component>
 </project>
