@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">The project</string>
+    <string name="about">About</string>
+    <string name="about_text">About the project</string>
 </resources>
