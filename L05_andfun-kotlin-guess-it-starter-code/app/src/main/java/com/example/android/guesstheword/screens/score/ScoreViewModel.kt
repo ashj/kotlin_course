@@ -11,6 +11,8 @@ class ScoreViewModel(finalScore : Int) : ViewModel() {
         get() = _eventPlayAgain
 
     private val _score = MutableLiveData<Int>()
+    val score : LiveData<Int>
+        get() = _score
 
     init {
         Log.i("ScoreViewModel", "The final score is $finalScore")
