@@ -27,28 +27,13 @@
             tools:srcCompat="@drawable/ic_sleep_5" />
 
         <TextView
-            android:id="@+id/sleep_length"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin"
-            android:layout_marginStart="@dimen/margin_short"
-            android:layout_marginTop="@dimen/margin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/quality_image"
-            app:layout_constraintTop_toTopOf="parent"
-            app:sleepDurationFormatted="@{sleep}"
-            tools:text="Wednesday" />
-
-        <TextView
             android:id="@+id/quality_string"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin"
-            android:layout_marginStart="@dimen/margin"
             android:layout_marginTop="@dimen/margin_short"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/quality_image"
-            app:layout_constraintTop_toBottomOf="@+id/sleep_length"
+            app:layout_constraintEnd_toEndOf="@+id/quality_image"
+            app:layout_constraintStart_toStartOf="@+id/quality_image"
+            app:layout_constraintTop_toBottomOf="@+id/quality_image"
             app:sleepQualityString="@{sleep}"
             tools:text="good" />
     </androidx.constraintlayout.widget.ConstraintLayout>
